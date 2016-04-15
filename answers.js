@@ -141,6 +141,88 @@ function highLow(array) {
     }, {highest: [-Infinity], lowest: [Infinity]});
 }
 
-console.log(highLow([-1,2,3,4,5]));
+//console.log(highLow([-1,2,3,4,5]));
 
+/* 
+Exercise 7
+
+Expanding on exercise 6, write a function called highLowTwo that takes an array of numbers, 
+and returns the higest, second highest, lowest, and second lowest numbers.
+
+For example, starting with [1, -10, 20, 40, 5], your function should return:
+
+{
+  "highest": 40,
+  "secondHighest": 20,
+  "lowest": -10,
+  "secondLowest": 5
+}
+
+*/
+
+function highLowTwo(array) {
+    
+    return array.reduce(function(obj, currentnum) {
+        if (currentnum > obj.highest) {
+            obj.highest = currentnum;
+        };
+        
+        if (currentnum > obj.secondHighest) {
+            obj.secondHighest = currentnum;
+        };
+        
+        if (currentnum < obj.lowest) {
+            obj.lowest = currentnum;
+        }
+        else if (currentnum < obj.secondLowest) {
+            obj.secondLowest = currentnum;
+        };
+        
+
+        return obj;
+    }, {highest: [-Infinity], secondHighest: [-Infinity], lowest: [Infinity], secondLowest: [Infinity]});
+}
+
+//console.log(highLowTwo([-1,2,3,4,5]));
+
+/*
+Exercise 8
+
+Write a function called countChars that takes a string, and returns an object where the keys are 
+letters, and the value is the number of times that letter appears.
+
+For example, with input "hello world", the output should be:
+
+{
+  "h": 1,
+  "e": 1,
+  "l": 3,
+  "o": 2,
+  "w": 1,
+  "r": 1,
+  "d": 1
+}
+*/
+
+function countChars (string) {
+    var array = string.toLowerCase().split("");
+    var abject = {"a":0,"b":0,"c":0,"d":0,"e":0,"f":0,"g":0,"h":0,"i":0,"j":0,"k":0,"l":0,"m":0,"n":0,"o":0,"p":0,"q":0,"r":0,"s":0,"t":0,"u":0,"v":0,"w":0,"x":0,"y":0,"z":0};
+    var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    
+    var counter = array.reduce(function(obj, char){
+        obj[char] += 1;
+        return obj;
+    }, abject);
+   
+   alphabet.forEach(function(each){    
+        if (counter[each] === 0){
+            delete counter[each];
+        }
+   });
+   return counter;
+}
+
+console.log(countChars("hello"));
+
+//This is a pretty terrible brute-force sort of solution but it got the job done.
 
