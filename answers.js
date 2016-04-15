@@ -186,8 +186,8 @@ function highLowTwo(array) {
     }, {highest: [-Infinity], secondHighest: [-Infinity], lowest: [Infinity], secondLowest: [Infinity]});
 }
 
-console.log(highLowTwo([-1,2,3,4,5]));
-console.log(highLowTwo([-100,-50,300,10000,1000,5,213,912]));
+//console.log(highLowTwo([-1,2,3,4,5]));
+//console.log(highLowTwo([-100,-50,300,10000,1000,5,213,912]));
 
 
 /*
@@ -229,5 +229,26 @@ function countChars (string) {
 
 //console.log(countChars("hello"));
 
-//This is a pretty terrible brute-force sort of solution but it got the job done.
+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)
+
+var peeps = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+];
 
