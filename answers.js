@@ -32,13 +32,14 @@ function getPositives (array) {
 
 /* Exercise 3
 
-Write a function called filterArray that takes an array AND a function as arguments. Your filter function should return a new array 
-that contains only the elements where the passed function returns a truthy value.
+Write a function called filterArray that takes an array AND a function as arguments. 
+Your filter function should return a new array that contains only the elements where the 
+passed function returns a truthy value.
 
 NOTE: You are allowed to use Array.prototype.filter to answer this question. */
 
-function isitPositive (num) {
-        if (num > 0) {
+function isitTruthy (num) {
+        if (num) {
             return true;
         }
        else {
@@ -56,7 +57,7 @@ function filterArray (array, callback) {
     return result;
 }
 
-//console.log(filterArray([1,2,3,-4], isitPositive))
+console.log(filterArray([1,2,3,-4, "bugs bunny", NaN, 0], isitTruthy));
 
 /* 
 Exercise 4
@@ -265,10 +266,10 @@ function peopleById(array){
 function peopleByFirstName(array){
     return array.reduce(function(obj, person){
         if (obj.hasOwnProperty(person.firstName)) {
-            obj[person.firstName].push(person)
+            obj[person.firstName].push(person)      //If a name-array pair already exists we push our latest person to it.
         }
         else {
-            obj[person.firstName] = [];
+            obj[person.firstName] = [];             //Initializes a name-keyed array if one does not exist.
             obj[person.firstName].push(person)
         }
         return obj;
