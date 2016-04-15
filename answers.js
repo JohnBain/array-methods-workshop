@@ -46,7 +46,6 @@ function isitPositive (num) {
        }
 }
 
-
 function filterArray (array, callback) {
     var result = [];
     for(var i = 0; i < array.length; i++) {
@@ -57,5 +56,32 @@ function filterArray (array, callback) {
     return result;
 }
 
-console.log(filterArray([1,2,3,-4], isitPositive))
+//console.log(filterArray([1,2,3,-4], isitPositive))
+
+/* 
+Exercise 4
+
+Write a function called longestWord that takes a string as argument, and returns the longest word in the string. You should use Array.prototype.reduce to do your work.
+
+Hint: You can use String.prototype.split to split the string into an array of words.
+*/
+
+function longestWord(string) {
+    var array = string.split(" ");
+    array.reduce(function(acc, curr) {
+        if (curr.length > acc.length){
+            console.log(curr)
+            acc = curr;
+        }
+        return acc;
+    }," ")
+    
+}
+
+
+console.log(longestWord("The rain in Spain falls mainly on the plain"))
+
+
+
+
 
