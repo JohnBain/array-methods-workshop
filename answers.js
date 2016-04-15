@@ -68,20 +68,14 @@ Hint: You can use String.prototype.split to split the string into an array of wo
 
 function longestWord(string) {
     var array = string.split(" ");
-    array.reduce(function(acc, curr) {
+    
+    return array.reduce(function(acc, curr) {
         if (curr.length > acc.length){
-            console.log(curr)
             acc = curr;
         }
         return acc;
-    }," ")
-    
+    }, " ")
 }
 
-
 console.log(longestWord("The rain in Spain falls mainly on the plain"))
-
-
-
-
 
